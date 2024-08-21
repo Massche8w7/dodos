@@ -396,4 +396,4 @@ if __name__ == "__main__":
         except Exception as e:
             print(e)
             # Add a small delay to avoid rapid looping in case of persistent errors
-            time.sleep(15)
+            time.sleep(0)

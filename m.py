@@ -10,9 +10,9 @@ from keep_alive import keep_alive
 keep_alive()
 
 # Insert your Telegram bot token here
-bot = telebot.TeleBot('7241802302:AAE2Ee9KGioRfHAIjvslkd18vGqUVGe8kTo')
+bot = telebot.TeleBot('7366095262:AAGDmphOW8ZE7VPElAqMi5j9E6prP-_hbbo')
 # Admin user IDs
-admin_id = {"5627901014"}
+admin_id = {"6678315655"}
 
 # Files for data storage
 USER_FILE = "users.json"
@@ -302,7 +302,7 @@ def show_help(message):
 @bot.message_handler(commands=['start'])
 def welcome_start(message):
     user_name = message.from_user.first_name
-    response = f'''🔹 𝙒𝙀𝙇𝘾𝙊𝙈𝙀 𝙏𝙊 𝙄𝙉𝙑𝙄𝙉𝘾𝙄𝘽𝙇𝙀 𝘿𝘿𝙊𝙎 𝘽𝙊𝙏 🔹
+    response = f'''🔹 𝙒𝙀𝙇𝘾𝙊𝙈𝙀 𝙏𝙊 AMORY 𝘿𝘿𝙊𝙎 𝘽𝙊𝙏 🔹
 '''
     bot.reply_to(message, response)
 
@@ -328,10 +328,10 @@ VIP 🌟:
 -> Concurrent attacks: 3
 
 𝐓𝐄𝐑𝐈 𝐀𝐔𝐊𝐀𝐃 𝐒𝐄 𝐁𝐀𝐇𝐀𝐑 💸:
-𝐃𝐚𝐲: 150 𝐫𝐬
-𝐖𝐞𝐞𝐤: 600 𝐫𝐬
-𝐌𝐨𝐧𝐓𝐡: 1100 𝐫𝐬 
-@VenomCHA7
+𝐃𝐚𝐲: 100 𝐫𝐬
+𝐖𝐞𝐞𝐤: 500 𝐫𝐬
+𝐌𝐨𝐧𝐓𝐡: 1200 𝐫𝐬 
+@rishabgupta02
 '''
     bot.reply_to(message, response)
 

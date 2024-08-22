@@ -388,8 +388,8 @@ def broadcast_message(message):
 
     bot.reply_to(message, response)
 
-if name == 'main':
-    while True:
+if __name__ == "__main__":
+      while True:
         try:
             bot.polling(non_stop=True, interval=0)
         except Exception as e:

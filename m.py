@@ -20,7 +20,7 @@ LOG_FILE = "log.txt"
 KEY_FILE = "keys.json"
 
 # Cooldown settings
-COOLDOWN_TIME = 0  # in seconds
+COOLDOWN_TIME = 240  # in seconds
 CONSECUTIVE_ATTACKS_LIMIT = 9
 CONSECUTIVE_ATTACKS_COOLDOWN = 3 # in seconds
 
@@ -394,5 +394,5 @@ if __name__ == "__main__":
             bot.polling(non_stop=True, interval=0)
         except Exception as e:
             print(e)
-            time.sleep(5)
+            time.sleep(0)
             continue

